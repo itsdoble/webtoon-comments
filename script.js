@@ -5,7 +5,6 @@ if (!localStorage.getItem(1)) {
   localStorage.setItem(1, JSON.stringify({ id: 2268, chapter: 1 }));
 }
 let details = JSON.parse(localStorage.getItem(1));
-console.log(details);
 
 const idInput = document.querySelector("input#id");
 idInput.placeholder = details.id;
@@ -24,6 +23,7 @@ idInput.onchange = () => {
 readButton.onclick = () => {
   if (chapterInput.value) {
     details.chapter = +chapterInput.value;
+    localStorage.setItem(1, JSON.stringify(details));
   }
   current.innerText = `Current: ${details.chapter} | Next: ${
     details.chapter + 1
