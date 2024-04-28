@@ -10,7 +10,7 @@ let chapter = 1;
 current.innerText = `Current: ${chapter} | Next: ${chapter + 1}`;
 readButton.onclick = () => {
   if (chapterInput.value) {
-    chapter = chapterInput.value;
+    chapter = +chapterInput.value;
   }
   current.innerText = `Current: ${chapter} | Next: ${chapter + 1}`;
   window.open(
